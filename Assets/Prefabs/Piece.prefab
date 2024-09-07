@@ -110,6 +110,7 @@ MonoBehaviour:
   sparkleEffectPrefab: {fileID: 2935834413251824617, guid: 4740e25d233f76246bb51bb299a0899e, type: 3}
   linePrefab: {fileID: 3089949388854398402, guid: b519b849a92f6f64f92cdbe826bf69b6, type: 3}
   compoundNameTextPrefab: {fileID: 3920715409229760783, guid: e795f58b68d2ffb428e2f79d1b942b67, type: 3}
+  compoundNameText: {fileID: 3920715409229760783, guid: e795f58b68d2ffb428e2f79d1b942b67, type: 3}
 --- !u!114 &-8695094211570494334
 MonoBehaviour:
   m_ObjectHideFlags: 0
