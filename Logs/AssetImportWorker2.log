@@ -277,3 +277,11 @@ Received Import Request.
 Start importing Assets/Shapes2D/Shaders/Common.cginc using Guid(727bbf2199d144c3dba0937803dd0578) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd01bda4382b6625968255dc936983754') in 0.115366 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 200.343245 seconds.
+  path: Assets/Shapes2D/Shaders/Shape.shader
+  artifactKey: Guid(44f74e30da9814584b2fdcdbe799e51a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Shapes2D/Shaders/Shape.shader using Guid(44f74e30da9814584b2fdcdbe799e51a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b48aee6f435e0cec5cf9ce1598ee2fa') in 0.017858 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
