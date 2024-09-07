@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using TMPro;  // TextMeshProを使用するための参照
 
 public class Piece : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class Piece : MonoBehaviour
     public GameObject sparkleEffectPrefab;
     public GameObject linePrefab;
 
+    public GameObject compoundNameTextPrefab;  // 化合物名表示用のPrefab
+
     private static List<Piece> connectedPieces = new List<Piece>();
     private static Piece lastConnectedPiece;
     private static Piece firstClickedPiece;
@@ -37,19 +40,33 @@ public class Piece : MonoBehaviour
     private static ScoreManager scoreManager;
 
     // 化合物ごとのスコアを設定
-    private static Dictionary<List<ElementType>, int> compoundScores = new Dictionary<List<ElementType>, int>()
+    private static Dictionary<List<ElementType>, (int score, string name)> compoundScores = new Dictionary<List<ElementType>, (int, string)>()
     {
-        { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon }, 10 }, // メタン (CH₄)
-        { new List<ElementType> { ElementType.Carbon, ElementType.OxygenIon }, 15 }, // 一酸化炭素 (CO)
-        { new List<ElementType> { ElementType.Carbon, ElementType.OxygenIon, ElementType.OxygenIon }, 20 }, // 二酸化炭素 (CO₂)
-        { new List<ElementType> { ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon }, 25 }, // 水 (H₂O)
-        { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon }, 30 }, // メタノール (CH₃OH)
-        { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon }, 35 }, // ホルムアルデヒド (H₂CO)
-        { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon, ElementType.OxygenIon }, 40 }, // ギ酸 (HCOOH)
-        { new List<ElementType> { ElementType.Carbon, ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon, ElementType.OxygenIon }, 45 }, // 酢酸 (CH₃COOH)
-        { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon, ElementType.OxygenIon, ElementType.OxygenIon }, 50 }, // 炭酸 (H₂CO₃)
-        { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.OxygenIon, ElementType.OxygenIon, ElementType.OxygenIon }, 55 }, // 炭酸水素イオン (HCO₃⁻)
+        { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon }, (10, "メタン (CH₄)") }, // メタン (CH₄)
+        { new List<ElementType> { ElementType.Carbon, ElementType.OxygenIon }, (15, "一酸化炭素 (CO)") }, // 一酸化炭素 (CO)
+        { new List<ElementType> { ElementType.Carbon, ElementType.OxygenIon, ElementType.OxygenIon }, (20, "二酸化炭素 (CO₂)") }, // 二酸化炭素 (CO₂)
+        { new List<ElementType> { ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon }, (25, "水 (H₂O)") }, // 水 (H₂O)
+        { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon }, (30, "メタノール (CH₃OH)") }, // メタノール (CH₃OH)
+        { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon }, (35, "ホルムアルデヒド (H₂CO)") }, // ホルムアルデヒド (H₂CO)
+        { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon, ElementType.OxygenIon }, (40, "ギ酸 (HCOOH)") }, // ギ酸 (HCOOH)
+        { new List<ElementType> { ElementType.Carbon, ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon, ElementType.OxygenIon }, (45, "酢酸 (CH₃COOH)") }, // 酢酸 (CH₃COOH)
+        { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon, ElementType.OxygenIon, ElementType.OxygenIon }, (50, "炭酸 (H₂CO₃)") }, // 炭酸 (H₂CO₃)
+        { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.OxygenIon, ElementType.OxygenIon, ElementType.OxygenIon }, (55, "炭酸水素イオン (HCO₃⁻)") }, // 炭酸水素イオン (HCO₃⁻)
         // 他の組み合わせもここに追加する
+    };
+    
+        private static Dictionary<List<ElementType>, string> compoundNames = new Dictionary<List<ElementType>, string>()
+    {
+        { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon }, "メタン (CH₄)" },
+        { new List<ElementType> { ElementType.Carbon, ElementType.OxygenIon }, "一酸化炭素 (CO)" },
+        { new List<ElementType> { ElementType.Carbon, ElementType.OxygenIon, ElementType.OxygenIon }, "二酸化炭素 (CO₂)" },
+        { new List<ElementType> { ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon }, "水 (H₂O)" },
+        { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon }, "メタノール (CH₃OH)" },
+        { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon }, "ホルムアルデヒド (H₂CO)" },
+        { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon, ElementType.OxygenIon }, "ギ酸 (HCOOH)" },
+        { new List<ElementType> { ElementType.Carbon, ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon, ElementType.OxygenIon }, "酢酸 (CH₃COOH)" },
+        { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon, ElementType.OxygenIon, ElementType.OxygenIon }, "炭酸 (H₂CO₃)" },
+        { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.OxygenIon, ElementType.OxygenIon, ElementType.OxygenIon }, "炭酸水素イオン (HCO₃⁻)" }
     };
 
     void Awake()
@@ -210,8 +227,15 @@ public class Piece : MonoBehaviour
             // スコアの追加
             if (matchedCompound != null && compoundScores.ContainsKey(matchedCompound))
             {
-                int scoreToAdd = compoundScores[matchedCompound];
+                int scoreToAdd = compoundScores[matchedCompound].score;
                 scoreManager.AddScore(scoreToAdd);
+                
+            }
+            if (compoundNames.ContainsKey(matchedCompound))
+            {
+                Debug.Log($"Showing compound name: {name}");  // 追加
+                string compoundName = compoundNames[matchedCompound];
+                ShowCompoundName(compoundName, GetCompoundCenterPosition());
             }
         }
         else
@@ -238,6 +262,54 @@ public class Piece : MonoBehaviour
         allLines.Clear();
 
         gridManager.ResetActiveArea();
+    }
+    private Vector3 GetCompoundCenterPosition()
+    {
+        Vector3 center = Vector3.zero;
+        foreach (var piece in connectedPieces)
+        {
+            center += piece.transform.position;
+        }
+        return center / connectedPieces.Count; // 中心位置を返す
+    }
+
+    private void ShowCompoundName(string name, Vector3 position)
+    {
+
+        Debug.Log($"Showing compound name: {name}");  // 追加
+        if (compoundNameTextPrefab == null) return;
+
+        GameObject textObj = Instantiate(compoundNameTextPrefab, position, Quaternion.identity);
+        TextMeshPro textMesh = textObj.GetComponent<TextMeshPro>();
+
+        if (textMesh != null)
+        {
+            textMesh.text = name;
+            StartCoroutine(AnimateTextAndDestroy(textObj, textMesh));
+        }
+    }
+
+    private IEnumerator AnimateTextAndDestroy(GameObject textObj, TextMeshPro textMesh)
+    {
+        float duration = 2.0f; // エフェクトの持続時間
+        float elapsedTime = 0f;
+        Vector3 originalScale = textObj.transform.localScale;
+
+        while (elapsedTime < duration)
+        {
+            // 拡大
+            textObj.transform.localScale = Vector3.Lerp(originalScale, originalScale * 2, elapsedTime / duration);
+
+            // フェードアウト
+            Color color = textMesh.color;
+            color.a = Mathf.Lerp(1f, 0f, elapsedTime / duration);
+            textMesh.color = color;
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        Destroy(textObj); // テキストオブジェクトを削除
     }
     private bool CheckIfValidCompound(out List<ElementType> matchedCompound)
     {

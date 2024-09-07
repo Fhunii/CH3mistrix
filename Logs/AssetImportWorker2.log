@@ -285,3 +285,152 @@ Received Import Request.
 Start importing Assets/Shapes2D/Shaders/Shape.shader using Guid(44f74e30da9814584b2fdcdbe799e51a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b48aee6f435e0cec5cf9ce1598ee2fa') in 0.017858 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 540.856327 seconds.
+  path: Assets/TextMesh Pro/Fonts
+  artifactKey: Guid(6ab70aee4d56447429c680537fbf93ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Fonts using Guid(6ab70aee4d56447429c680537fbf93ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25524e152126d39616bdb6d7e34b8aa6') in 0.000689 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.098255 seconds.
+  path: Assets/TextMesh Pro/Fonts/LiberationSans.ttf
+  artifactKey: Guid(e3265ab4bf004d28a9537516768c1c75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Fonts/LiberationSans.ttf using Guid(e3265ab4bf004d28a9537516768c1c75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9135feaa1dee4277ce002a7cb4007b87') in 0.002296 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.788 seconds
+Refreshing native plugins compatible for Editor in 8.86 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  1.031 seconds
+Domain Reload Profiling: 1817ms
+	BeginReloadAssembly (275ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (31ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (1ms)
+		CreateAndSetChildDomain (101ms)
+	RebuildCommonClasses (24ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (450ms)
+		LoadAssemblies (529ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (23ms)
+			TypeCache.Refresh (13ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (1031ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (517ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (36ms)
+			SetLoadedEditorAssemblies (6ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (120ms)
+			ProcessInitializeOnLoadAttributes (319ms)
+			ProcessInitializeOnLoadMethodAttributes (30ms)
+			AfterProcessingInitializeOnLoad (5ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (11ms)
+Refreshing native plugins compatible for Editor in 8.33 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4464 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 64 unused Assets / (50.8 KB). Loaded Objects now: 4934.
+Memory consumption went from 161.2 MB to 161.1 MB.
+Total: 3.396500 ms (FindLiveObjects: 0.376900 ms CreateObjectMapping: 0.151200 ms MarkObjects: 2.692500 ms  DeleteObjects: 0.174800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 799.967584 seconds.
+  path: Assets/Prefabs/CompoundButton.prefab
+  artifactKey: Guid(b47d236012ea8ae498766ad552aea77d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/CompoundButton.prefab using Guid(b47d236012ea8ae498766ad552aea77d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eac821b400ea3879ab94c6259ebd1c3b') in 0.064134 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Prefabs/Tile.prefab
+  artifactKey: Guid(a6d00f518ff330c42a314a49ac9f7c67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Tile.prefab using Guid(a6d00f518ff330c42a314a49ac9f7c67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1401c7131f26e071f5c825be6acb09fc') in 0.098703 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 39
+========================================================================
+Received Import Request.
+  Time since last request: 0.624761 seconds.
+  path: Assets/Materials/CH3mistrix rogo.png
+  artifactKey: Guid(c05a95070f767114299ff7be35b70ded) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/CH3mistrix rogo.png using Guid(c05a95070f767114299ff7be35b70ded) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80140f42d1ef1e21bd3db14bf09b9d32') in 0.057049 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.170605 seconds.
+  path: Assets/fonts/Ronde-B_square.otf
+  artifactKey: Guid(a55ed56a43dc1874791e24ceef3ca067) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/fonts/Ronde-B_square.otf using Guid(a55ed56a43dc1874791e24ceef3ca067) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '424e8016ba215381ce1bf88c85ba7305') in 0.055154 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 11.309193 seconds.
+  path: Assets/Materials/Genso/SpHydrogenIon.png
+  artifactKey: Guid(997c2b0e90be40e4f8156724bb4983f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Genso/SpHydrogenIon.png using Guid(997c2b0e90be40e4f8156724bb4983f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86dc6abe133498209589fe44b6addc41') in 0.043634 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Materials/Genso/SpHydrogenIonMono.png
+  artifactKey: Guid(a05677b59d1d7424e938539175b51156) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Genso/SpHydrogenIonMono.png using Guid(a05677b59d1d7424e938539175b51156) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e39fbf81bede718ba4a757085944d2fa') in 0.029721 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Materials/Genso/SpoxygenIonMono.png
+  artifactKey: Guid(1baea782e2230544686877550cd85d50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Genso/SpoxygenIonMono.png using Guid(1baea782e2230544686877550cd85d50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd88586cefbf94ef102f5b3ed61bed837') in 0.032899 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: スレッドの終了またはアプリケーションの要求によって、I/O 処理は中止されました。
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
