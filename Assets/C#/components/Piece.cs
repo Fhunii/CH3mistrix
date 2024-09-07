@@ -45,6 +45,10 @@ public class Piece : MonoBehaviour
     {
         { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon }, (10, "メタン\n(CH<sub>4</sub>)") }, // メタン (CH₄)
         { new List<ElementType> { ElementType.Carbon, ElementType.OxygenIon }, (15, "一酸化炭素\n(CO)") }, // 一酸化炭素 (CO)
+        { new List<ElementType> { ElementType.OxygenIon, ElementType.OxygenIon }, (5, "酸素\n(O<sub>2</sub>)") }, // 酸素 (O₂)
+        { new List<ElementType> { ElementType.OxygenIon, ElementType.OxygenIon, ElementType.OxygenIon }, (10, "オゾン\n(O<sub>2</sub>)") }, // オゾン (O₃)
+        { new List<ElementType> { ElementType.HydrogenIon, ElementType.HydrogenIon }, (5, "水素\n(H<sub>2</sub>)") }, // 水素 (H₂)
+        { new List<ElementType> { ElementType.Carbon, ElementType.Carbon, ElementType.HydrogenIon,ElementType.HydrogenIon,ElementType.HydrogenIon,ElementType.HydrogenIon }, (25, "エチレン\n(C<sub>2</sub>H<sub>4</sub>)") }, // エチレン (C₂H₄)
         { new List<ElementType> { ElementType.Carbon, ElementType.OxygenIon, ElementType.OxygenIon }, (20, "二酸化炭素\n(CO<sub>2</sub>)") }, // 二酸化炭素 (CO₂)
         { new List<ElementType> { ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon }, (25, "水\n(H<sub>2</sub>O)") }, // 水 (H₂O)
         { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon }, (30, "メタノール\n(CH<sub>3</sub>OH)") }, // メタノール (CH₃OH)
@@ -60,6 +64,10 @@ public class Piece : MonoBehaviour
     {
         { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon }, "メタン (CH₄)" },
         { new List<ElementType> { ElementType.Carbon, ElementType.OxygenIon }, "一酸化炭素 (CO)" },
+        { new List<ElementType> { ElementType.OxygenIon, ElementType.OxygenIon }, "酸素 (O₂)" },
+        { new List<ElementType> { ElementType.OxygenIon, ElementType.OxygenIon, ElementType.OxygenIon }, "オゾン (O₃)" },
+        { new List<ElementType> { ElementType.HydrogenIon, ElementType.HydrogenIon }, "水素 (H₂)" },
+        { new List<ElementType> { ElementType.Carbon, ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon }, "エチレン (C₂H₄)" },
         { new List<ElementType> { ElementType.Carbon, ElementType.OxygenIon, ElementType.OxygenIon }, "二酸化炭素 (CO₂)" },
         { new List<ElementType> { ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon }, "水 (H₂O)" },
         { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon }, "メタノール (CH₃OH)" },
