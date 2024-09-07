@@ -43,20 +43,20 @@ public class Piece : MonoBehaviour
     // 化合物ごとのスコアを設定
     private static Dictionary<List<ElementType>, (int score, string name)> compoundScores = new Dictionary<List<ElementType>, (int, string)>()
     {
-        { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon }, (10, "メタン\n(CH<sub>4</sub>)") }, // メタン (CH₄)
-        { new List<ElementType> { ElementType.Carbon, ElementType.OxygenIon }, (15, "一酸化炭素\n(CO)") }, // 一酸化炭素 (CO)
+        { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon }, (20, "メタン\n(CH<sub>4</sub>)") }, // メタン (CH₄)
+        { new List<ElementType> { ElementType.Carbon, ElementType.OxygenIon }, (12, "一酸化炭素\n(CO)") }, // 一酸化炭素 (CO)
         { new List<ElementType> { ElementType.OxygenIon, ElementType.OxygenIon }, (5, "酸素\n(O<sub>2</sub>)") }, // 酸素 (O₂)
         { new List<ElementType> { ElementType.OxygenIon, ElementType.OxygenIon, ElementType.OxygenIon }, (10, "オゾン\n(O<sub>2</sub>)") }, // オゾン (O₃)
         { new List<ElementType> { ElementType.HydrogenIon, ElementType.HydrogenIon }, (5, "水素\n(H<sub>2</sub>)") }, // 水素 (H₂)
-        { new List<ElementType> { ElementType.Carbon, ElementType.Carbon, ElementType.HydrogenIon,ElementType.HydrogenIon,ElementType.HydrogenIon,ElementType.HydrogenIon }, (25, "エチレン\n(C<sub>2</sub>H<sub>4</sub>)") }, // エチレン (C₂H₄)
-        { new List<ElementType> { ElementType.Carbon, ElementType.OxygenIon, ElementType.OxygenIon }, (20, "二酸化炭素\n(CO<sub>2</sub>)") }, // 二酸化炭素 (CO₂)
-        { new List<ElementType> { ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon }, (25, "水\n(H<sub>2</sub>O)") }, // 水 (H₂O)
-        { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon }, (30, "メタノール\n(CH<sub>3</sub>OH)") }, // メタノール (CH₃OH)
+        { new List<ElementType> { ElementType.Carbon, ElementType.Carbon, ElementType.HydrogenIon,ElementType.HydrogenIon,ElementType.HydrogenIon,ElementType.HydrogenIon }, (30, "エチレン\n(C<sub>2</sub>H<sub>4</sub>)") }, // エチレン (C₂H₄)
+        { new List<ElementType> { ElementType.Carbon, ElementType.OxygenIon, ElementType.OxygenIon }, (15, "二酸化炭素\n(CO<sub>2</sub>)") }, // 二酸化炭素 (CO₂)
+        { new List<ElementType> { ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon }, (10, "水\n(H<sub>2</sub>O)") }, // 水 (H₂O)
+        { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon }, (35, "メタノール\n(CH<sub>3</sub>OH)") }, // メタノール (CH₃OH)
         { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon }, (35, "ホルムアルデヒド\n(H<sub>2</sub>CO)") }, // ホルムアルデヒド (H₂CO)
         { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon, ElementType.OxygenIon }, (40, "ギ酸\n(HCOOH)") }, // ギ酸 (HCOOH)
-        { new List<ElementType> { ElementType.Carbon, ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon, ElementType.OxygenIon }, (45, "酢酸\n(CH<sub>3</sub>COOH)") }, // 酢酸 (CH₃COOH)
-        { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon, ElementType.OxygenIon, ElementType.OxygenIon }, (50, "炭酸\n(H<sub>2</sub>CO<sub>3</sub>)") }, // 炭酸 (H₂CO₃)
-        { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.OxygenIon, ElementType.OxygenIon, ElementType.OxygenIon }, (55, "炭酸水素イオン\n(HCO<sub>3</sub>⁻)") }, // 炭酸水素イオン (HCO₃⁻)
+        { new List<ElementType> { ElementType.Carbon, ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon, ElementType.OxygenIon }, (55, "酢酸\n(CH<sub>3</sub>COOH)") }, // 酢酸 (CH₃COOH)
+        { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon, ElementType.OxygenIon, ElementType.OxygenIon }, (45, "炭酸\n(H<sub>2</sub>CO<sub>3</sub>)") }, // 炭酸 (H₂CO₃)
+        { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.OxygenIon, ElementType.OxygenIon, ElementType.OxygenIon }, (50, "炭酸水素イオン\n(HCO<sub>3</sub>⁻)") }, // 炭酸水素イオン (HCO₃⁻)
         // 他の組み合わせもここに追加する
     };
     
