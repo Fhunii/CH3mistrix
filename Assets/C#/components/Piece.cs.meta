@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: d84d754cdb9b45c47aef843d7a1ac74f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - hydrogenIonSprite: {fileID: 21300000, guid: 997c2b0e90be40e4f8156724bb4983f6, type: 3}
+  - carbonSprite: {fileID: 21300000, guid: e0d33d707b510fd4ca219cd44a001e1c, type: 3}
+  - oxygenIonSprite: {fileID: 21300000, guid: 16f7bd32e59853540998cf5a129cd5b5, type: 3}
+  - hydrogenIonMonoSprite: {fileID: 21300000, guid: a05677b59d1d7424e938539175b51156, type: 3}
+  - carbonMonoSprite: {fileID: 21300000, guid: 1a82dc8b2f60ff54fadec57808fb44ed, type: 3}
+  - oxygenIonMonoSprite: {fileID: 21300000, guid: 1baea782e2230544686877550cd85d50, type: 3}
+  - sparkleEffectPrefab: {fileID: 2935834413251824617, guid: 4740e25d233f76246bb51bb299a0899e, type: 3}
+  - linePrefab: {fileID: 3089949388854398402, guid: b519b849a92f6f64f92cdbe826bf69b6, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
