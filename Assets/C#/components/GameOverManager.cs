@@ -9,7 +9,7 @@ public class GameOverManager : MonoBehaviour
     public Button returnToTitleButton;
     public TextMeshProUGUI scoreText;  // 既存のScoreTextを使用
     public TextMeshProUGUI highScoreText;
-    public GameObject scorePanel;
+    public GameObject scorePanel; // スコア表示用のパネル
     public RectTransform scoreTextTransform;  // ScoreTextのRectTransform
 
     private int score;
