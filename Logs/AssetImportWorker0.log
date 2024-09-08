@@ -1597,3 +1597,11 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 379.169131 seconds.
+  path: Assets/C#/start button.cs
+  artifactKey: Guid(6bb246279ad4f4a4aba84308dcaf681f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/C#/start button.cs using Guid(6bb246279ad4f4a4aba84308dcaf681f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '264b7438fd7bceeedf542b70ef7ba029') in 0.004384 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
