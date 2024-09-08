@@ -57,6 +57,11 @@ public class Piece : MonoBehaviour
         { new List<ElementType> { ElementType.Carbon, ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon, ElementType.OxygenIon }, (55, "酢酸\n(CH<sub>3</sub>COOH)") }, // 酢酸 (CH₃COOH)
         { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon, ElementType.OxygenIon, ElementType.OxygenIon }, (45, "炭酸\n(H<sub>2</sub>CO<sub>3</sub>)") }, // 炭酸 (H₂CO₃)
         { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.OxygenIon, ElementType.OxygenIon, ElementType.OxygenIon }, (50, "炭酸水素イオン\n(HCO<sub>3</sub>⁻)") }, // 炭酸水素イオン (HCO₃⁻)
+        { new List<ElementType> { ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon, ElementType.OxygenIon, ElementType.OxygenIon }, (20, "過酸化水素\n(H<sub>2</sub>O<sub>2</sub>)") }, // 過酸化水素 (H₂O₂)
+        { new List<ElementType> { ElementType.Carbon, ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon }, (30, "エタン\n(C<sub>2</sub>H<sub>6</sub>)") }, // エタン (C₂H₆)
+        { new List<ElementType> { ElementType.Carbon, ElementType.Carbon, ElementType.OxygenIon, ElementType.OxygenIon, ElementType.OxygenIon }, (17, "一酸化二炭素\n(C<sub>2</sub>O<sub>2</sub>)") }, // 一酸化二炭素 (C₂O₂)
+        { new List<ElementType> { ElementType.Carbon, ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon, ElementType.HydrogenIon }, (60, "エタノール\n(C<sub>2</sub>H<sub>5</sub>OH)") }, //エタノール (C₂H₅OH)
+        { new List<ElementType> { ElementType.Carbon, ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon }, (40, "アセトアルデヒド\n(C<sub>2</sub>H<sub>4</sub>O)") },//アセトアルデヒド　C₂H₄O
         // 他の組み合わせもここに追加する
     };
     
@@ -75,7 +80,13 @@ public class Piece : MonoBehaviour
         { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon, ElementType.OxygenIon }, "ギ酸 (HCOOH)" },
         { new List<ElementType> { ElementType.Carbon, ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon, ElementType.OxygenIon }, "酢酸 (CH₃COOH)" },
         { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon, ElementType.OxygenIon, ElementType.OxygenIon }, "炭酸 (H₂CO₃)" },
-        { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.OxygenIon, ElementType.OxygenIon, ElementType.OxygenIon }, "炭酸水素イオン (HCO₃⁻)" }
+        { new List<ElementType> { ElementType.Carbon, ElementType.HydrogenIon, ElementType.OxygenIon, ElementType.OxygenIon, ElementType.OxygenIon }, "炭酸水素イオン (HCO₃⁻)" },
+        { new List<ElementType> { ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon, ElementType.OxygenIon, ElementType.OxygenIon }, "過酸化水素 (H₂O₂)" },
+        { new List<ElementType> { ElementType.Carbon, ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon }, "エタン (C₂H₆)" },
+        { new List<ElementType> { ElementType.Carbon, ElementType.Carbon, ElementType.OxygenIon, ElementType.OxygenIon, ElementType.OxygenIon }, "一酸化二炭素 (C₂O₂)" },
+        { new List<ElementType> { ElementType.Carbon, ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.HydrogenIon }, "エタノール (C₂H₅OH)" },
+        { new List<ElementType> { ElementType.Carbon, ElementType.Carbon, ElementType.HydrogenIon, ElementType.HydrogenIon, ElementType.OxygenIon }, "アセトアルデヒド (C₂H₄O)" }
+
     };
 
     void Awake()
