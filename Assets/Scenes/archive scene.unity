@@ -1396,7 +1396,8 @@ PrefabInstance:
       value: CompoundButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8537635019830427512, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
@@ -1937,7 +1938,8 @@ PrefabInstance:
       value: CompoundButton (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8537635019830427512, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
