@@ -131,6 +131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1771540207}
     m_Modifications:
+    - target: {fileID: -5379023210822380823, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
+      propertyPath: Panel
+      value: 
+      objectReference: {fileID: 470383331}
     - target: {fileID: 2025287196806219210, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
       propertyPath: m_text
       value: "\u70AD\u9178"
@@ -237,6 +241,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1771540207}
     m_Modifications:
+    - target: {fileID: -5379023210822380823, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
+      propertyPath: Panel
+      value: 
+      objectReference: {fileID: 470383331}
     - target: {fileID: 2025287196806219210, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
       propertyPath: m_text
       value: "\u9162\u9178"
@@ -343,6 +351,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1771540207}
     m_Modifications:
+    - target: {fileID: -5379023210822380823, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
+      propertyPath: Panel
+      value: 
+      objectReference: {fileID: 470383331}
     - target: {fileID: 2025287196806219210, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
       propertyPath: m_text
       value: "\u30E1\u30BF\u30F3"
@@ -449,6 +461,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1771540207}
     m_Modifications:
+    - target: {fileID: -5379023210822380823, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
+      propertyPath: Panel
+      value: 
+      objectReference: {fileID: 470383331}
     - target: {fileID: 2025287196806219210, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
       propertyPath: m_text
       value: "\u87FB\u9178"
@@ -863,11 +879,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 470383331}
   m_CullTransparentMesh: 1
---- !u!1 &510613184 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2533452975499341542, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
-  m_PrefabInstance: {fileID: 924967253}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &510613185 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2524971302135765140, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
@@ -1296,6 +1307,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1771540207}
     m_Modifications:
+    - target: {fileID: -5379023210822380823, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
+      propertyPath: Panel
+      value: 
+      objectReference: {fileID: 470383331}
     - target: {fileID: 2524971302135765140, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1379,30 +1394,6 @@ PrefabInstance:
     - target: {fileID: 2533452975499341542, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
       propertyPath: m_Name
       value: CompoundButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 5984741473672211511, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5984741473672211511, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5984741473672211511, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 510613184}
-    - target: {fileID: 5984741473672211511, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5984741473672211511, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5984741473672211511, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1541,6 +1532,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1771540207}
     m_Modifications:
+    - target: {fileID: -5379023210822380823, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
+      propertyPath: Panel
+      value: 
+      objectReference: {fileID: 470383331}
     - target: {fileID: 2025287196806219210, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
       propertyPath: m_text
       value: "\u70AD\u9178\u6C34\u7D20\n\u30CA\u30C8\u30EA\u30A6\u30E0"
@@ -1849,6 +1844,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1771540207}
     m_Modifications:
+    - target: {fileID: -5379023210822380823, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
+      propertyPath: Panel
+      value: 
+      objectReference: {fileID: 470383331}
     - target: {fileID: 2025287196806219210, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
       propertyPath: m_text
       value: "\u4E8C\u9178\u5316\u70AD\u7D20"
@@ -1955,6 +1954,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1771540207}
     m_Modifications:
+    - target: {fileID: -5379023210822380823, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
+      propertyPath: Panel
+      value: 
+      objectReference: {fileID: 470383331}
     - target: {fileID: 2025287196806219210, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
       propertyPath: m_text
       value: "\u4E00\u9178\u5316\u70AD\u7D20"
@@ -2061,6 +2064,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1771540207}
     m_Modifications:
+    - target: {fileID: -5379023210822380823, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
+      propertyPath: Panel
+      value: 
+      objectReference: {fileID: 470383331}
     - target: {fileID: 2025287196806219210, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
       propertyPath: m_text
       value: "\u30E1\u30BF\u30CE\u30FC\u30EB\n"
@@ -2840,6 +2847,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1771540207}
     m_Modifications:
+    - target: {fileID: -5379023210822380823, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
+      propertyPath: Panel
+      value: 
+      objectReference: {fileID: 470383331}
     - target: {fileID: 2025287196806219210, guid: b47d236012ea8ae498766ad552aea77d, type: 3}
       propertyPath: m_text
       value: "\u30DB\u30EB\u30E0\n\u30A2\u30EB\u30C7\u30D2\u30C9"
