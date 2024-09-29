@@ -127,7 +127,7 @@ MonoBehaviour:
   m_MinSize: {x: 500, y: 100}
   m_MaxSize: {x: 40480, y: 16192}
   vertical: 0
-  controlID: 180
+  controlID: 15
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 26
+  controlID: 16
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -375,23 +375,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 6c680000
       m_LastClickedID: 0
-      m_ExpandedIDs: f4a6ffff4cacffff94acffffe8aeffff0cafffff68e0ffffcee6fffffce9ffff5ef5ffffa6f5fffffaf7ffff1ef8ffff18fbffffb0650000f86d0000166e0000486e0000546e0000
+      m_ExpandedIDs: fae6ffff96e7fffff6efffff3ef0ffffaef3ffffd8f3ffff00f4ffffeef8ffffcef9ffff18fbffff9a680000cc680000926f0000a46f0000a86f00000e7000001e70000028700000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: GameManager
-        m_OriginalName: GameManager
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 28144
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -493,7 +493,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/fonts
+    - Assets/Prefabs
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -501,15 +501,15 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/fonts
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: "C:\\Users\\ryosa\\Desktop\\\u4FDD\u5B58\u7528\\GENSO-connect-2ec1d074ed2e23b7ae00e583d5c0a0c39e30de2a\\CH3mistrix"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 0c670000
-    m_LastClickedID: 26380
+    m_SelectedIDs: 10670000
+    m_LastClickedID: 26384
     m_ExpandedIDs: 00000000ec6600000867000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1061,9 +1061,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.4843233, y: -0.41176012, z: 4.8258057}
+    m_Target: {x: -79.28406, y: 267.76865, z: -0.048903875}
     speed: 2
-    m_Value: {x: 1.4843233, y: -0.41176012, z: 4.8258057}
+    m_Value: {x: -79.28406, y: 267.76865, z: -0.048903875}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1113,9 +1113,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 7.6357894
+    m_Target: 495.1064
     speed: 2
-    m_Value: 7.6357894
+    m_Value: 495.1064
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1133,7 +1133,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.15135016, y: 0.84697694, z: -0.33027586, w: -0.38813302}
+  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
