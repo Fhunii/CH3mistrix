@@ -1,96 +1,52 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System.Collections.Generic;
 
 public class ButtonManager : MonoBehaviour
 {
-    // ボタンに必要なデータを保持するクラス
-    [System.Serializable]
-    public class ButtonData
-    {
-        public string buttonText;       // ボタンのテキスト
-        public Sprite buttonImage;      // ボタンに表示する画像
-        public int state;               // 変数1: 0=???表示, 1=通常表示
-        public string description1;     // 説明1
-        public string description2;     // 説明2
-        public Sprite descriptionImage; // 説明画面の中央に表示する画像
-    }
-
-    // 複数のボタンデータを格納するリスト
-    public List<ButtonData> buttonDataList = new List<ButtonData>();
-    
-    public GameObject buttonPrefab;       // ボタンのプレハブ
-    public Transform contentParent;       // ボタンを配置するScrollViewのContent
-
-    // 説明画面のUI要素
-    public GameObject descriptionPanel;   // 説明画面全体
-    public Image descriptionImage;        // 説明画面の中央の画像
-    public TextMeshProUGUI descriptionText1; // 説明画面の説明1
-    public TextMeshProUGUI descriptionText2; // 説明画面の説明2
-    public Button backButton;             // 戻るボタン
+    public Button[] buttons;                  // ボタンの配列
+    public ButtonData[] buttonDataList;       // 各ボタンに対応するデータ配列
+    public GameObject descriptionPanel;       // 説明を表示するパネル
+    public Image descriptionImage;            // 説明に表示する画像
+    public TextMeshProUGUI description1Text;  // 説明テキスト1
+    public TextMeshProUGUI description2Text;  // 説明テキスト2
+    public Button backButton;                 // 戻るボタン
 
     private void Start()
     {
-        // 複数のボタンを生成
-        for (int i = 0; i < buttonDataList.Count; i++)
+        // ボタンにリスナーを設定
+        for (int i = 0; i < buttons.Length; i++)
         {
-            CreateButton(i);
+            int index = i;  // クロージャ対策のためローカル変数に保持
+            buttons[i].onClick.AddListener(() => OnButtonClicked(index));
+
+            // ボタンのテキストと画像を設定
+            buttons[i].GetComponentInChildren<TextMeshProUGUI>().text = buttonDataList[i].buttonText;
+            buttons[i].GetComponentInChildren<Image>().sprite = buttonDataList[i].buttonImage;
         }
 
-        // 説明パネルと戻るボタンの初期設定
-        descriptionPanel.SetActive(false);
+        // 戻るボタンのクリックイベント
         backButton.onClick.AddListener(HideDescriptionPanel);
+        
+        descriptionPanel.SetActive(false);
     }
 
-    // ボタンを生成して設定
-    void CreateButton(int index)
+    // ボタンがクリックされたときの処理
+    private void OnButtonClicked(int index)
     {
         ButtonData data = buttonDataList[index];
-        
-        // ボタンを生成
-        GameObject newButton = Instantiate(buttonPrefab, contentParent);
-        TextMeshProUGUI buttonText = newButton.GetComponentInChildren<TextMeshProUGUI>();
-        Image buttonImage = newButton.transform.Find("ButtonImage").GetComponent<Image>();
 
-        // 状態に応じたテキストと画像設定
-        if (data.state == 0)
-        {
-            buttonText.text = "???";
-            buttonImage.gameObject.SetActive(false); // 画像を非表示
-        }
-        else if (data.state == 1)
-        {
-            buttonText.text = data.buttonText;
-            buttonImage.sprite = data.buttonImage;
-            buttonImage.gameObject.SetActive(true); // 画像を表示
-        }
-
-        // ボタンがクリックされたときの動作
-        Button button = newButton.GetComponent<Button>();
-        button.onClick.AddListener(() => OnButtonClicked(data));
-    }
-
-    // ボタンがクリックされたときに説明画面を表示
-    void OnButtonClicked(ButtonData data)
-    {
-        if (data.state == 1)
-        {
-            ShowDescriptionPanel(data);
-        }
-    }
-
-    // 説明画面を表示
-    void ShowDescriptionPanel(ButtonData data)
-    {
-        descriptionPanel.SetActive(true);
+        // 説明パネルにデータをセット
         descriptionImage.sprite = data.descriptionImage;
-        descriptionText1.text = data.description1;
-        descriptionText2.text = data.description2;
+        description1Text.text = data.description1;
+        description2Text.text = data.description2;
+
+        // 説明パネルを表示
+        descriptionPanel.SetActive(true);
     }
 
-    // 説明画面を隠す
-    void HideDescriptionPanel()
+    // 説明パネルを隠す処理
+    private void HideDescriptionPanel()
     {
         descriptionPanel.SetActive(false);
     }
