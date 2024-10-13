@@ -16,10 +16,12 @@ public class ToMenuButton : MonoBehaviour
     void Update()
     {
         
+        
     }
     public void OnClick()
     {
         StartCoroutine(ToMenuClicked());
+       
 
     }
     
