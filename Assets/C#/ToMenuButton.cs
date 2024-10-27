@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,30 +7,22 @@ using UnityEngine;
 
 public class ToMenuButton : MonoBehaviour
 {
-    // Start is called before the first frame update
+
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-        
-    }
     public void OnClick()
     {
-        StartCoroutine(ToMenuClicked());
-       
+        StartCoroutine(Clicked());
 
     }
-    
-    public IEnumerator ToMenuClicked()
+    // ボタンが押された場合、今回呼び出される関数
+    public IEnumerator Clicked()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("menu scene");
         yield return null;
+
     }
-
 }
-
