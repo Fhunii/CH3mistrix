@@ -1,0 +1,17 @@
+[
+    {
+        "imagePath": "ArchiveImages/H2O",
+        "description1": "説明 1-1",
+        "description2": "詳細な説明 1-2"
+    },
+    {
+        "imagePath": "ArchiveImages/CO2",
+        "description1": "説明 2-1",
+        "description2": "詳細な説明 2-2"
+    },
+    {
+        "imagePath": "ArchiveImages/CH4",
+        "description1": "説明 3-1",
+        "description2": "詳細な説明 3-2"
+    }
+]

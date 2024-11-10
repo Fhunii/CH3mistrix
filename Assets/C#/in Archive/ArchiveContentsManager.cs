@@ -1,74 +1,109 @@
-using UnityEngine;
-using UnityEngine.UI;
 using System.Collections.Generic;
-using TMPro;  // TextMeshProを使用するためのライブラリ
+using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
+using System.IO;
 
 public class ArchiveContentsManager : MonoBehaviour
-{
-    public GameObject buttonPrefab;  // ボタンのプレハブ
-    public Transform scrollViewContent;  // スクロールビューのコンテント
-    public GameObject square;  // スクエア
-    public Button backButton;  // 戻るボタン
-    public TextMeshProUGUI description1;  // 説明1 (TextMeshProに変更)
-    public Image image;  // 画像
-    public TextMeshProUGUI description2;  // 説明2 (TextMeshProに変更)
+{    
+    [System.Serializable]
+    public class ButtonData
+    {
+        public string description1;
+        public string description2;
+        public string imagePath;
+    }
+    
+    [System.Serializable]
+    public class ButtonDataList
+    {
+        public List<ButtonData> buttonData;
+    }
 
-    private List<string> buttonTexts = new List<string> { "ボタン1", "ボタン2", "ボタン3" };  // ボタンのテキスト
-    private List<string> descriptions1 = new List<string> { "説明1-1", "説明1-2", "説明1-3" };  // 説明1
-    private List<Sprite> images = new List<Sprite>();  // 画像リスト
-    private List<string> descriptions2 = new List<string> { "説明2-1", "説明2-2", "説明2-3" };  // 説明2
+    [SerializeField] private GameObject buttonPrefab;
+    [SerializeField] private Transform scrollViewContent;
+    [SerializeField] private GameObject square;
+    [SerializeField] private Button backButton;
+    [SerializeField] private TextMeshProUGUI description1Text;
+    [SerializeField] private Image imageDisplay;
+    [SerializeField] private TextMeshProUGUI description2Text;
+
+    private List<Button> buttons = new List<Button>();
+    private ButtonDataList buttonDataList;
 
     void Start()
     {
+        LoadDataFromJson();
         InitializeButtons();
-        HideSquare();  // 初期状態でスクエアを非表示
+        HideSquare();
+        backButton.onClick.AddListener(HideSquare);
+    }
+    
 
-        backButton.onClick.AddListener(HideSquare);  // 戻るボタンにイベントを追加
+
+    void LoadDataFromJson()
+    {
+        TextAsset jsonData = Resources.Load<TextAsset>("archive data");
+        buttonDataList = JsonUtility.FromJson<ButtonDataList>("{\"archive Data\":" + jsonData.text + "}");
     }
 
-    // ボタンを初期化する
     void InitializeButtons()
     {
-        for (int i = 0; i < buttonTexts.Count; i++)
+        for (int i = 0; i < buttonDataList.buttonData.Count; i++)
         {
             GameObject newButton = Instantiate(buttonPrefab, scrollViewContent);
+
+            // ボタンの位置設定 (例: x=100, y=100 - i * 150)
+            newButton.GetComponent<RectTransform>().anchoredPosition = new Vector2(100, 100 - i * 150);
+
             int index = i;  // ローカル変数として保持
-            newButton.GetComponentInChildren<TextMeshProUGUI>().text = buttonTexts[i];  // TextMeshProUGUIに対応
+            newButton.GetComponentInChildren<TextMeshProUGUI>().text = buttonDataList.buttonData[i].description1;
             newButton.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(index));
+
+            buttons.Add(newButton.GetComponent<Button>());
         }
     }
 
-    // ボタンが押されたときの処理
     void OnButtonClick(int index)
     {
-        ShowSquare(index);
-        ToggleButtons(false);  // 他のボタンを無効化
-    }
+        ButtonData data = buttonDataList.buttonData[index];
 
-    // スクエアとその要素を表示する
-    void ShowSquare(int index)
-    {
+        // 画像とテキストを表示する
+        Sprite sprite = Resources.Load<Sprite>(data.imagePath);
+        if (sprite != null)
+        {
+            imageDisplay.sprite = sprite;
+        }
+        description1Text.text = data.description1;
+        description2Text.text = data.description2;
+
+        // スクエアを最前面に表示
         square.SetActive(true);
-        description1.text = descriptions1[index];
-        image.sprite = images[index];
-        description2.text = descriptions2[index];
         backButton.gameObject.SetActive(true);
+        description1Text.gameObject.SetActive(true);
+        imageDisplay.gameObject.SetActive(true);
+        description2Text.gameObject.SetActive(true);
+
+        // 他のボタンを無効化
+        foreach (var button in buttons)
+        {
+            button.interactable = false;
+        }
     }
 
-    // スクエアとその要素を隠す
     void HideSquare()
     {
+        // スクエアを非表示
         square.SetActive(false);
         backButton.gameObject.SetActive(false);
-        ToggleButtons(true);  // 他のボタンを再度有効化
-    }
+        description1Text.gameObject.SetActive(false);
+        imageDisplay.gameObject.SetActive(false);
+        description2Text.gameObject.SetActive(false);
 
-    // ボタンの有効化・無効化を切り替える
-    void ToggleButtons(bool isEnabled)
-    {
-        foreach (Transform child in scrollViewContent)
+        // 他のボタンを有効化
+        foreach (var button in buttons)
         {
-            child.GetComponent<Button>().interactable = isEnabled;
+            button.interactable = true;
         }
     }
 }
